@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace ArthrpodaASP.Models
 {
-    public class Genus
+    public class Genera
     {
-        public int GenusId {get; set;}// primary key
+        public int GeneraId {get; set;}// primary key
 
         public string Name {get; set;}
 
