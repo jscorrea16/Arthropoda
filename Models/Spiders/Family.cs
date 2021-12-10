@@ -11,12 +11,12 @@ namespace ArthrpodaASP.Models
 
         public string Name {get; set;}
 
-        public InfraOrder InfraOrder {get; set;}// navigation property
+        //public InfraOrder InfraOrder {get; set;}// navigation property
 
-        public int InfraOrderId {get; set;}// foreign key
-        public override string ToString()
-        {
-            return $"({Name})";
-        }
+        //public int InfraOrderId {get; set;}// foreign key
+        //public override string ToString()
+        //{
+            //return $"({Name})";
+        //}
     }
 }

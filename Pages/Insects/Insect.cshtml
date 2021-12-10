@@ -1,0 +1,43 @@
+@page
+@model ArthrpodaASP.Pages.Insects.InsectModel
+
+@{
+    ViewData["Title"] = "Insects";
+}
+
+<h1>Insects</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Familyinsects[0].Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+
+}
+    </tbody>
+    <tbody>
+        @foreach (var item in Model.Familyinsects) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+
+}
+    </tbody>
+</table>

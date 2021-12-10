@@ -8,3 +8,52 @@
     <h1 class="display-4">Welcome to the Arthropoda Webpage!</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<p>Spiders</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InfraOrders[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Familys[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Generas[0].Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.InfraOrders) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+
+}
+    </tbody>
+    <tbody>
+        @foreach (var item in Model.Familys) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+
+}
+    <tbody>
+        @foreach (var item in Model.Generas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+
+}
+    </tbody>
+</table>

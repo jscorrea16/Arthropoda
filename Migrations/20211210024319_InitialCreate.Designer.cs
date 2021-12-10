@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Arthropoda.Migrations
 {
     [DbContext(typeof(ArthropodaDbContext))]
-    [Migration("20211208023733_InitialCreate")]
+    [Migration("20211210024319_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,15 +23,10 @@ namespace Arthropoda.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("InfraOrderId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
                     b.HasKey("FamilyId");
-
-                    b.HasIndex("InfraOrderId");
 
                     b.ToTable("Familys");
                 });
@@ -45,12 +40,7 @@ namespace Arthropoda.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("FamilyinsectId");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("Familyinsects");
                 });
@@ -61,15 +51,10 @@ namespace Arthropoda.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("FamilyId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
                     b.HasKey("GeneraId");
-
-                    b.HasIndex("FamilyId");
 
                     b.ToTable("Generas");
                 });
@@ -100,33 +85,6 @@ namespace Arthropoda.Migrations
                     b.HasKey("OrderId");
 
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("ArthrpodaASP.Models.Family", b =>
-                {
-                    b.HasOne("ArthrpodaASP.Models.InfraOrder", "InfraOrder")
-                        .WithMany()
-                        .HasForeignKey("InfraOrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ArthrpodaASP.Models.Familyinsect", b =>
-                {
-                    b.HasOne("ArthrpodaASP.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ArthrpodaASP.Models.Genera", b =>
-                {
-                    b.HasOne("ArthrpodaASP.Models.Family", "Family")
-                        .WithMany()
-                        .HasForeignKey("FamilyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

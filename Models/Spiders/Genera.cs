@@ -11,13 +11,13 @@ namespace ArthrpodaASP.Models
 
         public string Name {get; set;}
 
-        public Family Family {get; set;}//navigation property
+        //public Family Family {get; set;}//navigation property
 
-        public int FamilyId {get; set;}// foreign key
+        //public int FamilyId {get; set;}// foreign key
 
-        public override string ToString()
-        {
-            return $"({Name})";
-        }
+        //public override string ToString()
+        //{
+            //return $"({Name})";
+        //}
     }
 }
