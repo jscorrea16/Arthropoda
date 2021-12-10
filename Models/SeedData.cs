@@ -97,7 +97,9 @@ namespace ArthrpodaASP.Models
                     }
 
                 );
+                context.SaveChanges();
             }
+
             using (var context = new ArthropodaDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ArthropodaDbContext>>()))
                 {// Look for any Orders.
@@ -123,7 +125,9 @@ namespace ArthrpodaASP.Models
                         Name = "Hemiptera"
                     }
                 );
+                context.SaveChanges();
             }
+            
             using (var context = new ArthropodaDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ArthropodaDbContext>>()))
                 {// Look for any Familyinsect.
@@ -149,6 +153,7 @@ namespace ArthrpodaASP.Models
                         Name = "Reduviidae"
                     }
                 );
+                context.SaveChanges();
             }                            
         }
     }

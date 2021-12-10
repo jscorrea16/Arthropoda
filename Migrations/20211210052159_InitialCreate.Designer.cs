@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Arthropoda.Migrations
 {
     [DbContext(typeof(ArthropodaDbContext))]
-    [Migration("20211210024319_InitialCreate")]
+    [Migration("20211210052159_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
